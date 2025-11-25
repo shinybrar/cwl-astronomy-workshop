@@ -1,0 +1,5 @@
+fits_file:
+  class: File
+  path: ../../data/sample-fits/observation.fits
+
+output_name: observation-header.json

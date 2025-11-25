@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="col bg-surface" style="width: 960px; height: 540px;">
+  <div style="position: absolute; left: 0; top: 0; width: 8px; height: 100%; background: linear-gradient(180deg, #00a3e0 0%, #0082b3 100%);"></div>
+  
+  <div style="width: 920px; margin: 0 20px; padding-top: 30px;" class="fit">
+    <h1 class="text-4xl" style="margin: 0; color: #e8ecf4;">CWL Data Types</h1>
+    <p class="text-muted-foreground" style="margin-top: 8px;">Strong typing ensures correctness</p>
+  </div>
+  
+  <div class="fill-height row gap-lg" style="padding: 15px 20px 25px 40px;">
+    <div class="col gap-sm" style="flex: 1;">
+      <p class="text-sm" style="margin: 0 0 8px 0; color: #00a3e0; font-weight: bold;">PRIMITIVES</p>
+      
+      <div class="row gap-sm items-center" style="background: #141824; padding: 10px 14px; border-radius: 6px;">
+        <code style="color: #ff6b35; font-size: 13px; width: 80px;">string</code>
+        <p class="text-sm text-muted-foreground" style="margin: 0;">"hello world"</p>
+      </div>
+      
+      <div class="row gap-sm items-center" style="background: #141824; padding: 10px 14px; border-radius: 6px;">
+        <code style="color: #ff6b35; font-size: 13px; width: 80px;">int</code>
+        <p class="text-sm text-muted-foreground" style="margin: 0;">42</p>
+      </div>
+      
+      <div class="row gap-sm items-center" style="background: #141824; padding: 10px 14px; border-radius: 6px;">
+        <code style="color: #ff6b35; font-size: 13px; width: 80px;">float</code>
+        <p class="text-sm text-muted-foreground" style="margin: 0;">3.14159</p>
+      </div>
+      
+      <div class="row gap-sm items-center" style="background: #141824; padding: 10px 14px; border-radius: 6px;">
+        <code style="color: #ff6b35; font-size: 13px; width: 80px;">boolean</code>
+        <p class="text-sm text-muted-foreground" style="margin: 0;">true / false</p>
+      </div>
+    </div>
+    
+    <div class="col gap-sm" style="flex: 1;">
+      <p class="text-sm" style="margin: 0 0 8px 0; color: #00a3e0; font-weight: bold;">COMPLEX TYPES</p>
+      
+      <div class="row gap-sm items-center" style="background: #141824; padding: 10px 14px; border-radius: 6px;">
+        <code style="color: #ff6b35; font-size: 13px; width: 100px;">File</code>
+        <p class="text-sm text-muted-foreground" style="margin: 0;">Single file reference</p>
+      </div>
+      
+      <div class="row gap-sm items-center" style="background: #141824; padding: 10px 14px; border-radius: 6px;">
+        <code style="color: #ff6b35; font-size: 13px; width: 100px;">Directory</code>
+        <p class="text-sm text-muted-foreground" style="margin: 0;">Folder reference</p>
+      </div>
+      
+      <div class="row gap-sm items-center" style="background: #141824; padding: 10px 14px; border-radius: 6px;">
+        <code style="color: #ff6b35; font-size: 13px; width: 100px;">File[]</code>
+        <p class="text-sm text-muted-foreground" style="margin: 0;">Array of files</p>
+      </div>
+      
+      <div class="row gap-sm items-center" style="background: #141824; padding: 10px 14px; border-radius: 6px;">
+        <code style="color: #ff6b35; font-size: 13px; width: 100px;">record</code>
+        <p class="text-sm text-muted-foreground" style="margin: 0;">Structured object</p>
+      </div>
+    </div>
+    
+    <div class="col gap-sm" style="flex: 1;">
+      <p class="text-sm" style="margin: 0 0 8px 0; color: #00a3e0; font-weight: bold;">MODIFIERS</p>
+      
+      <div class="row gap-sm items-center" style="background: #141824; padding: 10px 14px; border-radius: 6px;">
+        <code style="color: #ff6b35; font-size: 13px; width: 80px;">type?</code>
+        <p class="text-sm text-muted-foreground" style="margin: 0;">Optional (nullable)</p>
+      </div>
+      
+      <div class="row gap-sm items-center" style="background: #141824; padding: 10px 14px; border-radius: 6px;">
+        <code style="color: #ff6b35; font-size: 13px; width: 80px;">type[]</code>
+        <p class="text-sm text-muted-foreground" style="margin: 0;">Array of type</p>
+      </div>
+      
+      <div class="rounded p-3" style="background: #1a1f2e; border: 1px dashed #2a3344; margin-top: 8px;">
+        <p class="text-xs text-muted-foreground" style="margin: 0; line-height: 1.5;">
+          <span style="color: #00a3e0;">Tip:</span> Use <code style="color: #ff6b35;">default:</code> to provide fallback values for optional inputs.
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

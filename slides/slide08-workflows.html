@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="col bg-surface" style="width: 960px; height: 540px;">
+  <div style="position: absolute; left: 0; top: 0; width: 8px; height: 100%; background: linear-gradient(180deg, #00a3e0 0%, #0082b3 100%);"></div>
+  
+  <div style="width: 920px; margin: 0 20px; padding-top: 30px;" class="fit">
+    <h1 class="text-4xl" style="margin: 0; color: #e8ecf4;">Workflows: Connecting Tools</h1>
+    <p class="text-muted-foreground" style="margin-top: 8px;">Data flows through steps automatically</p>
+  </div>
+  
+  <div class="fill-height row gap-lg" style="padding: 15px 20px 25px 40px;">
+    <div class="col justify-center gap" style="width: 40%;">
+      <!-- Visual workflow diagram -->
+      <div class="col items-center gap-sm">
+        <div class="rounded p-3 text-center" style="background: #00a3e0; width: 160px;">
+          <p class="text-sm" style="margin: 0; color: white; font-weight: bold;">Input File</p>
+        </div>
+        <p style="margin: 0; color: #00a3e0; font-size: 20px;">↓</p>
+        <div class="rounded p-3 text-center" style="background: #141824; border: 2px solid #00a3e0; width: 160px;">
+          <p class="text-sm" style="margin: 0; color: #e8ecf4; font-weight: bold;">Step 1: Extract</p>
+        </div>
+        <p style="margin: 0; color: #00a3e0; font-size: 20px;">↓</p>
+        <div class="rounded p-3 text-center" style="background: #141824; border: 2px solid #00a3e0; width: 160px;">
+          <p class="text-sm" style="margin: 0; color: #e8ecf4; font-weight: bold;">Step 2: Process</p>
+        </div>
+        <p style="margin: 0; color: #00a3e0; font-size: 20px;">↓</p>
+        <div class="rounded p-3 text-center" style="background: #141824; border: 2px solid #00a3e0; width: 160px;">
+          <p class="text-sm" style="margin: 0; color: #e8ecf4; font-weight: bold;">Step 3: Report</p>
+        </div>
+        <p style="margin: 0; color: #ff6b35; font-size: 20px;">↓</p>
+        <div class="rounded p-3 text-center" style="background: #ff6b35; width: 160px;">
+          <p class="text-sm" style="margin: 0; color: white; font-weight: bold;">Output Files</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col gap" style="width: 60%;">
+      <div class="rounded p-4" style="background: #141824; border: 1px solid #2a3344; flex: 1;">
+        <pre style="margin: 0; font-family: 'Courier New', monospace; font-size: 11px; color: #c8d0e0; line-height: 1.5;"><span style="color: #7a8599;"># Connect step outputs to inputs</span>
+steps:
+  extract:
+    run: extract-header.cwl
+    in:
+      fits_file: <span style="color: #00a3e0;">input_image</span>  <span style="color: #7a8599;"># workflow input</span>
+    out: [header_json]
+
+  process:
+    run: calculate-stats.cwl
+    in:
+      fits_file: <span style="color: #00a3e0;">input_image</span>
+    out: [stats_json]
+
+  report:
+    run: generate-report.cwl
+    in:
+      header: <span style="color: #ff6b35;">extract/header_json</span>  <span style="color: #7a8599;"># step output</span>
+      stats: <span style="color: #ff6b35;">process/stats_json</span>
+    out: [report]
+
+outputs:
+  final_report:
+    outputSource: <span style="color: #ff6b35;">report/report</span></pre>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

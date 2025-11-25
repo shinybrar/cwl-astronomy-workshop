@@ -1,0 +1,3 @@
+fits_image:
+  class: File
+  path: ../../data/sample-fits/observation.fits

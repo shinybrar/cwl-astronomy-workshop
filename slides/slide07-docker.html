@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="col bg-surface" style="width: 960px; height: 540px;">
+  <div style="position: absolute; left: 0; top: 0; width: 8px; height: 100%; background: linear-gradient(180deg, #00a3e0 0%, #0082b3 100%);"></div>
+  
+  <div style="width: 920px; margin: 0 20px; padding-top: 30px;" class="fit">
+    <h1 class="text-4xl" style="margin: 0; color: #e8ecf4;">Docker Integration</h1>
+    <p class="text-muted-foreground" style="margin-top: 8px;">Reproducible environments, anywhere</p>
+  </div>
+  
+  <div class="fill-height row gap-xl" style="padding: 20px 40px 30px 40px;">
+    <div class="col gap" style="width: 55%;">
+      <div class="rounded p-4" style="background: #141824; border: 1px solid #2a3344;">
+        <p class="text-xs" style="margin: 0 0 10px 0; color: #00a3e0; font-weight: bold;">DockerRequirement</p>
+        <pre style="margin: 0; font-family: 'Courier New', monospace; font-size: 12px; color: #c8d0e0; line-height: 1.6;">requirements:
+  DockerRequirement:
+    dockerPull: python:3.11-slim</pre>
+      </div>
+      
+      <div class="rounded p-4" style="background: #141824; border: 1px solid #2a3344;">
+        <p class="text-xs" style="margin: 0 0 10px 0; color: #00a3e0; font-weight: bold;">With Embedded Scripts</p>
+        <pre style="margin: 0; font-family: 'Courier New', monospace; font-size: 11px; color: #c8d0e0; line-height: 1.5;">requirements:
+  DockerRequirement:
+    dockerPull: astropy/astropy
+  InitialWorkDirRequirement:
+    listing:
+      - entryname: process.py
+        entry: |
+          from astropy.io import fits
+          # Your script here...</pre>
+      </div>
+    </div>
+    
+    <div class="col gap justify-center" style="width: 45%;">
+      <div class="rounded p-4" style="background: linear-gradient(135deg, #141824 0%, #1a1f2e 100%); border: 1px solid #00a3e0;">
+        <p class="text-lg" style="margin: 0; color: #00a3e0; font-weight: bold;">Benefits</p>
+        <div class="col gap-sm" style="margin-top: 12px;">
+          <p class="text-sm" style="margin: 0; color: #c8d0e0;">✓ Exact software versions</p>
+          <p class="text-sm" style="margin: 0; color: #c8d0e0;">✓ All dependencies included</p>
+          <p class="text-sm" style="margin: 0; color: #c8d0e0;">✓ Works on any platform</p>
+          <p class="text-sm" style="margin: 0; color: #c8d0e0;">✓ Isolated from host system</p>
+        </div>
+      </div>
+      
+      <div class="rounded p-3" style="background: #1a1f2e; border: 1px dashed #ff6b35;">
+        <p class="text-xs" style="margin: 0; color: #ff6b35;">
+          <strong>Note:</strong> Singularity also supported for HPC environments
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+measurement_set:
+  class: Directory
+  path: ../../data/measurement-sets/example.ms
+
+calibrator_source: "3C286"
+
+target_source: "SKA-J1234+5678"
+
+flagging_strategy: "ska-default"
+
+solution_interval: 60.0
+
+image_size: 2048
+
+pixel_scale: "1asec"
+
+clean_iterations: 50000
