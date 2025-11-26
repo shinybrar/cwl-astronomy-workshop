@@ -4,11 +4,36 @@
 
 Before diving deep, check these common issues:
 
+- [ ] Is your virtual environment activated? (`which python` should show venv path)
 - [ ] Is Docker running? (`docker info`)
 - [ ] Is cwltool installed? (`cwltool --version`)
 - [ ] Does the CWL file validate? (`cwltool --validate file.cwl`)
 - [ ] Do all input files exist? (check paths in job file)
 - [ ] Are file paths absolute or correct relative paths?
+
+---
+
+## Virtual Environment Issues
+
+#### "cwltool: command not found" (but you installed it)
+```
+bash: cwltool: command not found
+```
+
+**Solution**: Your virtual environment isn't activated:
+```bash
+source cwl-workshop-env/bin/activate  # Linux/macOS
+# or
+cwl-workshop-env\Scripts\activate  # Windows
+```
+
+#### "ModuleNotFoundError" when running cwltool
+**Solution**: Install in the correct environment:
+```bash
+# Make sure you're in your venv
+which python  # Should show path to venv
+pip install cwltool
+```
 
 ---
 
@@ -306,6 +331,7 @@ requirements:
 
 | Problem | Quick Fix |
 |---------|-----------|
+| cwltool not found | Activate venv: `source cwl-workshop-env/bin/activate` |
 | Docker not running | Start Docker Desktop |
 | File not found | Use absolute paths |
 | Output missing | Check glob pattern |

@@ -28,6 +28,20 @@ check_warn() {
     ((WARN++))
 }
 
+# Check if running in a virtual environment
+echo "Checking Python environment..."
+if [[ -n "$VIRTUAL_ENV" ]]; then
+    check_pass "Running in virtual environment: $VIRTUAL_ENV"
+elif [[ -n "$CONDA_DEFAULT_ENV" ]]; then
+    check_pass "Running in conda environment: $CONDA_DEFAULT_ENV"
+else
+    check_warn "Not running in a virtual environment"
+    echo "        Recommended: Create one with 'python3 -m venv cwl-workshop-env'"
+    echo "        Then activate with 'source cwl-workshop-env/bin/activate'"
+fi
+
+echo ""
+
 # Check Docker
 echo "Checking Docker..."
 if command -v docker &> /dev/null; then
@@ -70,7 +84,14 @@ if command -v cwltool &> /dev/null; then
     check_pass "cwltool is installed ($CWLTOOL_VERSION)"
 else
     check_fail "cwltool is not installed"
-    echo "        Install with: pip install cwltool"
+    if [[ -n "$VIRTUAL_ENV" ]] || [[ -n "$CONDA_DEFAULT_ENV" ]]; then
+        echo "        Install with: pip install cwltool"
+    else
+        echo "        Create a virtual environment first:"
+        echo "          python3 -m venv cwl-workshop-env"
+        echo "          source cwl-workshop-env/bin/activate"
+        echo "          pip install cwltool"
+    fi
 fi
 
 echo ""

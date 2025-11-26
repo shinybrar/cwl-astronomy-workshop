@@ -26,9 +26,18 @@ This workshop teaches astronomers and data scientists how to create reproducible
 
 2. **CWL Reference Runner** (cwltool)
    ```bash
+   # Create and activate a virtual environment (recommended)
+   python3 -m venv cwl-workshop-env
+   source cwl-workshop-env/bin/activate  # Linux/macOS
+   # or: cwl-workshop-env\Scripts\activate  # Windows
+   
+   # Install cwltool
    pip install cwltool
-   # or
-   conda install -c conda-forge cwltool
+   
+   # Alternatively, use conda
+   # conda create -n cwl-workshop python=3.11 cwltool -c conda-forge
+   # conda activate cwl-workshop
+   
    cwltool --version  # Test installation
    ```
 
@@ -52,6 +61,11 @@ This workshop teaches astronomers and data scientists how to create reproducible
 # Clone the repository
 git clone https://github.com/siphos112/cwl-astronomy-workshop.git
 cd cwl-astronomy-workshop
+
+# Set up Python virtual environment
+python3 -m venv cwl-workshop-env
+source cwl-workshop-env/bin/activate  # Linux/macOS
+pip install cwltool
 
 # Verify your setup
 ./setup/workshop-check.sh
