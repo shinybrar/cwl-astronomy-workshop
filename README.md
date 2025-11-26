@@ -17,6 +17,8 @@ This workshop teaches astronomers and data scientists how to create reproducible
 
 ## Prerequisites
 
+Complete these steps **before the workshop** to ensure a smooth experience.
+
 ### Required Software
 
 1. **Docker Desktop** (4GB+ RAM allocation)
@@ -26,7 +28,9 @@ This workshop teaches astronomers and data scientists how to create reproducible
 
 2. **CWL Reference Runner** (cwltool)
    ```bash
-   # Create and activate a virtual environment (recommended)
+   # Create a virtual environment in your workshop directory
+   # (run this after cloning the repository)
+   cd cwl-astronomy-workshop
    python3 -m venv cwl-workshop-env
    source cwl-workshop-env/bin/activate  # Linux/macOS
    # or: cwl-workshop-env\Scripts\activate  # Windows
@@ -62,10 +66,8 @@ This workshop teaches astronomers and data scientists how to create reproducible
 git clone https://github.com/siphos112/cwl-astronomy-workshop.git
 cd cwl-astronomy-workshop
 
-# Set up Python virtual environment
-python3 -m venv cwl-workshop-env
+# Activate your virtual environment (see Prerequisites if not yet created)
 source cwl-workshop-env/bin/activate  # Linux/macOS
-pip install cwltool
 
 # Verify your setup
 ./setup/workshop-check.sh
