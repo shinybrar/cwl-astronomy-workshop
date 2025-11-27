@@ -132,19 +132,19 @@ Complete real-world example using SKA data processing tools.
 
 - [CWL Specification](https://www.commonwl.org/specification/)
 - [CWL User Guide](https://www.commonwl.org/user_guide/)
-- [SKA Developer Portal](https://developer.skao.int/)
-- [RASCIL Documentation](https://ska-telescope.gitlab.io/external/rascil/)
 
-## Support
 
-- **Workshop Slack**: #cwl-workshop
-- **Email**: cwl-support@ska.org
-- **Office Hours**: Wednesdays 14:00 UTC
 
-## License
 
-This workshop material is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
-## Acknowledgments
 
-Developed by the SKA Observatory in collaboration with the CWL community.
+
+
+
+
+
+
+
+
+
+
