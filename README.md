@@ -30,7 +30,7 @@ Complete these steps **before the workshop** to ensure a smooth experience.
    ```bash
    # Create a virtual environment in your workshop directory
    # (run this after cloning the repository)
-   cd cwl-astronomy-workshop
+   cd <my-directory>
    python3 -m venv cwl-workshop-env
    source cwl-workshop-env/bin/activate  # Linux/macOS
    # or: cwl-workshop-env\Scripts\activate  # Windows
